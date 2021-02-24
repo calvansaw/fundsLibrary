@@ -24,7 +24,7 @@ const fundSchema = new mongoose.Schema({
 	sharpeRatio5Yr: { type: Number, required: true },
 	volatility1Yr: { type: Number, required: true },
 	volatility3Yr: { type: Number, required: true },
-	volatility5Yr: { type: String, required: true },
+	volatility5Yr: { type: Number, required: true },
 	paymentType: [String],
 });
 

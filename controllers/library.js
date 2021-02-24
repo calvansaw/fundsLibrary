@@ -16,7 +16,12 @@ library.get('/', (req, res) => {
 
 ////// New //////
 library.get('/new', (req, res) => {
-	res.render('library/new.ejs', { currentUser: req.session.currentUser });
+	if(!req.session.currentUser) {
+		console.log('not authenticated redirecting...');
+		res.redirect('/library');
+	} else {
+		res.render('library/new.ejs', { currentUser: req.session.currentUser });
+	}
 });
 
 ////// Show //////
@@ -34,7 +39,7 @@ library.get('/:id', (req, res) => {
 library.post('/', (req, res) => {
 	if (!req.session.currentUser) {
 		console.log('not authenticated redirecting...');
-		res.redirect('/library/new');
+		res.redirect('/library');
 	} else {
 		req.body.paymentType = req.body.paymentType.split(',');
 		Funds.create(req.body, (err, createdFund) => {
@@ -79,5 +84,23 @@ library.put('/:id', (req, res)=>{
 		})
 	}
 })
+
+////// Delete //////
+library.delete('/:id', (req, res)=>{
+	if(!req.session.currentUser) {
+		console.log('not authenticated redirecting...');
+		res.redirect('/library');
+	} else {
+		Funds.findByIdAndRemove(req.params.id, (err, removedFund)=>{
+			if(err) console.log(err);
+			if(removedFund) {
+				console.log(removedFund);
+				res.redirect('/library');
+			}
+		})
+	}
+})
+
+
 
 module.exports = library;

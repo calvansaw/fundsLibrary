@@ -14,7 +14,12 @@
 							<%=currentUser.username%>
 						</h2>
 					</div>
-					<button><a href="/library/<%=fund._id%>/edit">Edit Fund</a></button>
+                    <div>
+                        <button><a href="/library/<%=fund._id%>/edit">Edit Fund</a></button>
+                        <form action="/library/<%=fund._id%>?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </div>
 				<%};%>
                 
 				<ul>
