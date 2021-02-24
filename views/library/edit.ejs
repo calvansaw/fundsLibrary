@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../partials/head.ejs') -%>
+	</head>
+	<body>
+		<div class="main">
+			<div>
+				<h1>Edit Fund</h1>
+				<form action="/library/<%=fund._id%>?_method=PUT" method="POST">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" value="<%=fund.name%>" />
+					<label for="riskRating">Risk Rating</label>
+					<input type="text" name="riskRating" id="riskRating" value="<%=fund.riskRating%>" />
+                    <label for="fundSize">Fund Size</label>
+                    <input type="number" name="fundSize" id="fundSize" step="any" value="<%=fund.fundSize%>">
+                    <label for="fundSizeFx">Fund Size Currency</label>
+                    <input type="text" name="fundSizeFx" id="fundSizeFx" value="<%=fund.fundSizeFx%>">
+                    <label for="managementFee">Management Fee</label>
+                    <input type="number" name="managementFee" id="managementFee" step="any" value="<%=fund.managementFee%>">
+                    <label for="dividendDistFreq">Dividend Distribution Frequency</label>
+                    <input type="text" name="dividendDistFreq" id="dividendDistFreq" value="<%=fund.dividendDistFreq%>">
+                    <label for="inceptionDate">Inception Date</label>
+                    <input type="date" name="inceptionDate" id="inceptionDate" value="<%=fund.inceptionDate%>">
+                    <label for="performanceYtd">Performance Cumulative YTD</label>
+                    <input type="number" name="performanceYtd" id="performanceYtd" step="any" value="<%=fund.performanceYtd%>">
+                    <label for="performance1Yr">Performance 1 Year</label>
+                    <input type="number" name="performance1Yr" id="performance1Yr" step="any" value="<%=fund.performance1Yr%>">
+                    <label for="performance3Yr">Performance 3 Year</label>
+                    <input type="number" name="performance3Yr" id="performance3Yr" step="any" value="<%=fund.performance3Yr%>">
+                    <label for="performance5Yr">Performance 5 Year</label>
+                    <input type="number" name="performance5Yr" id="performance5Yr" step="any" value="<%=fund.performance5Yr%>">
+                    <label for="nav">NAV</label>
+                    <input type="number" name="nav" id="nav" step="any" value="<%=fund.nav%>">
+                    <label for="navFx">NAV Currency</label>
+                    <input type="text" name="navFx" id="navFx" value="<%=fund.navFx%>">
+                    <label for="product">Product Type</label>
+                    <input type="text" name="product" id="product" value="<%=fund.product%>">
+                    <label for="assetManager">Asset Manager</label>
+                    <input type="text" name="assetManager" id="assetManager" value="<%=fund.assetManager%>">
+                    <label for="assetClass">Asset Class</label>
+                    <input type="text" name="assetClass" id="assetClass" value="<%=fund.assetClass%>">
+                    <label for="subAssetClass">Sub Asset Class</label>
+                    <input type="text" name="subAssetClass" id="subAssetClass" value="<%=fund.subAssetClass%>">
+                    <label for="sharpeRatio1Yr">Sharpe Ratio 1 Year</label>
+                    <input type="number" name="sharpeRatio1Yr" id="sharpeRatio1Yr" step="any" value="<%=fund.sharpeRatio1Yr%>">
+                    <label for="sharpeRatio3Yr">Sharpe Ratio 3 Year</label>
+                    <input type="number" name="sharpeRatio3Yr" id="sharpeRatio3Yr" step="any" value="<%=fund.sharpeRatio3Yr%>">
+                    <label for="sharpeRatio5Yr">Sharpe Ratio 5 Year</label>
+                    <input type="number" name="sharpeRatio5Yr" id="sharpeRatio5Yr" step="any" value="<%=fund.sharpeRatio5Yr%>">
+                    <label for="volatility1Yr">Volatility 1 Year</label>
+                    <input type="number" name="volatility1Yr" id="volatility1Yr" step="any" value="<%=fund.volatility1Yr%>">
+                    <label for="volatility3Yr">Volatility 3 Year</label>
+                    <input type="number" name="volatility3Yr" id="volatility3Yr" step="any" value="<%=fund.volatility3Yr%>">
+                    <label for="volatility5Yr">Volatility 5 Year</label>
+                    <input type="number" name="volatility5Yr" id="volatility5Yr" step="any" value="<%=fund.volatility5Yr%>">
+                    <label for="paymentType">Payment Type</label>
+                    <input type="text" name="paymentType" id="paymentType" value="<%=fund.paymentType%>">
+
+					<input type="submit" value="Update" />
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

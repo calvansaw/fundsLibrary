@@ -47,4 +47,37 @@ library.post('/', (req, res) => {
 	}
 });
 
+////// Edit //////
+library.get('/:id/edit', (req, res) => {
+	if(!req.session.currentUser) {
+		console.log('not authenticated redirecting...');
+		res.redirect('/library');
+	} else {
+		Funds.findById(req.params.id, (err, foundFund) => {
+			if (err) console.log(err);
+			res.render('library/edit.ejs', {
+				fund: foundFund,
+				currentUser: req.session.currentUser,
+			});
+		});
+	}
+});
+
+////// Update //////
+library.put('/:id', (req, res)=>{
+	if(!req.session.currentUser) {
+		console.log('not authenticated redirecting...');
+		res.redirect('/library');
+	} else {
+		req.body.paymentType = req.body.paymentType.split(',');
+		Funds.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedFund)=>{
+			if(err) console.log(err);
+			if(updatedFund) {
+				console.log(updatedFund);
+				res.redirect('/library/' + req.params.id);
+			}
+		})
+	}
+})
+
 module.exports = library;
