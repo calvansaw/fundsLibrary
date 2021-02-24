@@ -42,6 +42,14 @@ app.get('/', (req, res) => {
 const userController = require('./controllers/users');
 app.use('/users', userController);
 
+////// sessions-login ///////
+const sessionController = require('./controllers/sessions');
+app.use('/sessions', sessionController);
+
+////// fund library ///////
+const libraryController = require('./controllers/library');
+app.use('/library', libraryController);
+
 //////////////////////////////////////////////////
 app.listen(port, () => {
 	console.log('Listening at port', port + ' ' + mongoURI);
