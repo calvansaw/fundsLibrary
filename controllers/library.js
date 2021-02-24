@@ -19,6 +19,17 @@ library.get('/new', (req, res) => {
 	res.render('library/new.ejs', { currentUser: req.session.currentUser });
 });
 
+////// Show //////
+library.get('/:id', (req, res) => {
+	Funds.findById(req.params.id, (err, foundFund) => {
+		if (err) console.log(err);
+		res.render('library/show.ejs', {
+			fund: foundFund,
+			currentUser: req.session.currentUser,
+		});
+	});
+});
+
 ////// Create //////
 library.post('/', (req, res) => {
 	if (!req.session.currentUser) {
