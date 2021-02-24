@@ -4,7 +4,7 @@ const sessions = express.Router();
 const User = require('../models/users');
 
 sessions.get('/', (req, res) => {
-	res.render('sessions/new.ejs');
+	res.render('sessions/new.ejs', { currentUser: req.session.currentUser });
 });
 
 sessions.post('/', (req, res) => {
@@ -17,9 +17,16 @@ sessions.post('/', (req, res) => {
 			if (bcrypt.compareSync(req.body.password, foundUser.password)) {
 				req.session.currentUser = foundUser;
 				console.log('successful login');
-				res.redirect('/');
+				res.redirect('/library');
 			} else res.send('<a href="/sessions">Wrong password</a>');
 		}
+	});
+});
+
+sessions.delete('/', (req, res) => {
+	req.session.destroy(() => {
+		console.log('successful logout');
+		res.redirect('/library');
 	});
 });
 

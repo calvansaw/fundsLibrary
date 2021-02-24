@@ -14,8 +14,19 @@
 	<div class="header-nav">
 		<ul>
 			<li>
-				<a href="/">BACK to /</a>
+				<a href="/library">Back to Library</a>
 			</li>
+			<li><a href="/users/new">Create New User</a></li>
+			<li>
+				<button><a href="/sessions">Sign In</a></button>
+			</li>
+			<%if(currentUser) {%>
+				<li>
+					<form action="/sessions?_method=DELETE" method="POST">
+						<input type="submit" value="Sign Out" />
+					</form>
+				</li>
+			<%};%>
 		</ul>
 	</div>
 </body>

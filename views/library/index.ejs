@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../partials/head.ejs') -%>
+	</head>
+	<body>
+		<div class="main">
+			<div>
+                <h1>Welcome to Fund Library</h1>
+
+				<%if(currentUser) {%>
+					<div>
+						<h2>
+							<%=currentUser.username%>
+						</h2>
+					</div>
+					<button><a href="/library/new">Create New Fund</a></button>
+				<%};%>
+                
+				<ul>
+                    <%allFunds.forEach(fund => {%>
+                        <li><a href="#"><%=fund.name%></a></li>
+                    <%});%>
+                    
+                </ul>
+			</div>
+		</div>
+	</body>
+</html>
