@@ -24,14 +24,19 @@
 				<a href="/library">Back to Library</a>
 			</li>
 			<li><a href="/users/new">Create New User</a></li>
-			<li>
-				<button><a href="/sessions">Sign In</a></button>
-			</li>
+			
 			<%if(currentUser) {%>
 				<li>
 					<form action="/sessions?_method=DELETE" method="POST">
 						<input type="submit" value="Sign Out" />
 					</form>
+				</li>
+				<li>
+					<h3><%=currentUser.username%></h3>
+				</li>		
+			<%} else {%>
+				<li>
+					<button><a href="/sessions">Sign In</a></button>
 				</li>
 			<%};%>
 		</ul>

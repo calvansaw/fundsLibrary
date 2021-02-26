@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../partials/head.ejs') -%>
+	</head>
+	<body>
+		<div class="main">
+			<div>
+                <h2>Search Results: <%=funds.length%></h2>
+
+                <%funds.forEach(fund => {%>
+
+                    <%if(currentUser) {%>
+                        <div>
+                            <button><a href="/library/<%=fund._id%>/edit">Edit Fund</a></button>
+                            <form action="/library/<%=fund._id%>?_method=DELETE" method="POST">
+                                <input type="submit" value="Delete">
+                            </form>
+                        </div>
+                    <%};%>
+                
+                    
+                    <ul>
+                        <li><%=fund.name%></li>
+                        <li><%=fund.riskRating%></li>
+                        <li><%=fund.fundSize%></li>
+                        <li><%=fund.fundSizeFx%></li>
+                        <li><%=fund.managementFee%></li>
+                        <li><%=fund.dividendDistFreq%></li>
+                        <li><%=fund.inceptionDate%></li>
+                        <li><%=fund.performanceYtd%></li>
+                        <li><%=fund.performance1Yr%></li>
+                        <li><%=fund.performance3Yr%></li>
+                        <li><%=fund.performance5Yr%></li>
+                        <li><%=fund.nav%></li>
+                        <li><%=fund.navFx%></li>
+                        <li><%=fund.product%></li>
+                        <li><%=fund.assetManager%></li>
+                        <li><%=fund.assetClass%></li>
+                        <li><%=fund.subAssetClass%></li>
+                        <li><%=fund.sharpeRatio1Yr%></li>
+                        <li><%=fund.sharpeRatio3Yr%></li>
+                        <li><%=fund.sharpeRatio5Yr%></li>
+                        <li><%=fund.volatility1Yr%></li>
+                        <li><%=fund.volatility3Yr%></li>
+                        <li><%=fund.volatility5Yr%></li>
+                        <%fund.paymentType.forEach(payType => {%>
+                            <li><%=payType%></li>
+                        <%});%>
+                    </ul>
+                <%});%>
+			</div>
+		</div>
+	</body>
+</html>

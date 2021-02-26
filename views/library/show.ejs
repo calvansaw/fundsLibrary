@@ -9,11 +9,6 @@
                 <h1><%=fund.name%></h1>
 
 				<%if(currentUser) {%>
-					<div>
-						<h2>
-							<%=currentUser.username%>
-						</h2>
-					</div>
                     <div>
                         <button><a href="/library/<%=fund._id%>/edit">Edit Fund</a></button>
                         <form action="/library/<%=fund._id%>?_method=DELETE" method="POST">

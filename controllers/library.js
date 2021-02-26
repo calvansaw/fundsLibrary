@@ -25,13 +25,14 @@ library.get('/search', (req, res) => {
 				res.send('<a href="/library">Invalid search value</a>');
 			}
 			// if (searchedFunds) res.send(searchedFunds);
-			res.render('library/index.ejs', {
-				allFunds: searchedFunds,
+			res.render('library/search.ejs', {
+				funds: searchedFunds,
 				currentUser: req.session.currentUser,
 			});
 		}
 	);
 });
+
 
 ////// New //////
 library.get('/new', (req, res) => {
