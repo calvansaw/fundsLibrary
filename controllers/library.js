@@ -65,64 +65,64 @@ library.get('/portfolio', (req, res) => {
 
 library.get('/portfolio/simulate', (req, res) => {
 	// res.send(req.query.time_horizon);
-
+	let risk = '';
 	if (req.query.time_horizon === 'short') {
-		Funds.find(
-			{
-				riskRating: { $in: shortRisk },
-				assetClass: { $regex: asset[0], $options: 'i' },
-			},
-			(err, foundFunds) => {
-				if (err) {
-					console.log(err);
-				}
-				if (foundFunds) {
-					let portfolio = [];
-					if(req.query.risk_appetite === 'conservative') {
-
-						for (let i = 0; i < 2; i++) {
-							portfolio.push(foundFunds[i]);
-						}
-					}
-					if(req.query.risk_appetite === 'aggressive') {
-
-						for (let i = 0; i < 1; i++) {
-							portfolio.push(foundFunds[i]);
-						}
-					}
-
-					Funds.find(
-						{
-							riskRating: { $in: shortRisk },
-							assetClass: { $regex: asset[1], $options: 'i' },
-						},
-						(err, foundFunds) => {
-							if (err) {
-								console.log(err);
-							}
-							if (foundFunds) {
-
-								if(req.query.risk_appetite === 'conservative') {
-
-									for (let i = 0; i < 1; i++) {
-										portfolio.push(foundFunds[i]);
-									}
-								}
-								if(req.query.risk_appetite === 'aggressive') {
-
-									for (let i = 0; i < 2; i++) {
-										portfolio.push(foundFunds[i]);
-									}
-								}
-
-								res.send(portfolio);
-							}
-						}
-					).sort({ performance5Yr: -1 });
-				}
-			}
-		).sort({ performance5Yr: -1 });
+		risk = shortRisk;
 	}
+	if (req.query.time_horizon === 'long') {
+		risk = LongRisk;
+	}
+
+	Funds.find(
+		{
+			riskRating: { $in: risk },
+			assetClass: { $regex: asset[0], $options: 'i' },
+		},
+		(err, foundFunds) => {
+			if (err) {
+				console.log(err);
+			}
+			if (foundFunds) {
+				let portfolio = [];
+				if (req.query.risk_appetite === 'conservative') {
+					for (let i = 0; i < 2; i++) {
+						portfolio.push(foundFunds[i]);
+					}
+				}
+				if (req.query.risk_appetite === 'aggressive') {
+					for (let i = 0; i < 1; i++) {
+						portfolio.push(foundFunds[i]);
+					}
+				}
+
+				Funds.find(
+					{
+						riskRating: { $in: risk },
+						assetClass: { $regex: asset[1], $options: 'i' },
+					},
+					(err, foundFunds) => {
+						if (err) {
+							console.log(err);
+						}
+						if (foundFunds) {
+							if (req.query.risk_appetite === 'conservative') {
+								for (let i = 0; i < 1; i++) {
+									portfolio.push(foundFunds[i]);
+								}
+							}
+							if (req.query.risk_appetite === 'aggressive') {
+								for (let i = 0; i < 2; i++) {
+									portfolio.push(foundFunds[i]);
+								}
+							}
+
+							res.send(portfolio);
+						}
+					}
+				).sort({ performance5Yr: -1 });
+			}
+		}
+	).sort({ performance5Yr: -1 });
 });
 
 ////// New //////
