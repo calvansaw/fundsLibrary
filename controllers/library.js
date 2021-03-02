@@ -55,6 +55,8 @@ library.get('/portfolio', (req, res) => {
 library.get('/portfolio/simulate', (req, res) => {
 	// res.send(req.query.payment_type);
 	const paymentHandle = [];
+	let risk = '';
+	let portfolio = [];
 	const paymentHandler = (payment) => {
 		if (typeof payment === 'string') {
 			if (payment === 'cash') paymentHandle.push('Cash');
@@ -69,7 +71,7 @@ library.get('/portfolio/simulate', (req, res) => {
 	};
 
 	paymentHandler(req.query.payment_type);
-	let risk = '';
+
 	if (req.query.time_horizon === 'short') {
 		risk = shortRisk;
 	}
@@ -88,7 +90,6 @@ library.get('/portfolio/simulate', (req, res) => {
 				console.log(err);
 			}
 			if (foundFunds) {
-				let portfolio = [];
 				if (req.query.risk_appetite === 'conservative') {
 					for (let i = 0; i < 2; i++) {
 						portfolio.push(foundFunds[i]);
@@ -121,8 +122,11 @@ library.get('/portfolio/simulate', (req, res) => {
 									portfolio.push(foundFunds[i]);
 								}
 							}
-
-							res.send(portfolio);
+							res.render('library/simulate.ejs', {
+								funds: portfolio,
+								currentUser: req.session.currentUser,
+							});
+							// res.send(portfolio);
 						}
 					}
 				).sort({ performance5Yr: -1 });
