@@ -4,28 +4,7 @@ const library = express.Router();
 const Funds = require('../models/funds');
 
 ///////////////////////////////////////////////////////////////////////////////////
-const shortRisk = ['Moderately Conservative', 'Balanced'];
-const LongRisk = [
-	'Moderately Conservative',
-	'Balanced',
-	'Growth',
-	'Aggressive',
-];
-const asset = ['fixed income', 'equity'];
 
-///////////////////////////////////////////////////////////////////////////////////
-// const findAsset = async (risk, asset, arr, arr1) => {
-// 	await Funds.find(
-// 		{
-// 			riskRating: { $in: risk },
-// 			assetClass: { $regex: asset, $options: 'i' },
-// 		},
-// 		(err, foundFunds) => {
-// 			if (err) console.log(err);
-
-// 		}
-// 	);
-// };
 ////// Index //////
 library.get('/', (req, res) => {
 	Funds.find({}, (err, foundFunds) => {
@@ -56,15 +35,40 @@ library.get('/search', (req, res) => {
 	);
 });
 
-////// Portfolio //////
+////////////////////////// Portfolio ///////////////////////////
+const shortRisk = ['Moderately Conservative', 'Balanced'];
+const LongRisk = [
+	'Moderately Conservative',
+	'Balanced',
+	'Growth',
+	'Aggressive',
+];
+const asset = ['fixed income', 'equity'];
+
 library.get('/portfolio', (req, res) => {
 	res.render('library/portfolio.ejs', {
 		currentUser: req.session.currentUser,
 	});
 });
 
+////////Simulate////////
 library.get('/portfolio/simulate', (req, res) => {
-	// res.send(req.query.time_horizon);
+	// res.send(req.query.payment_type);
+	const paymentHandle = [];
+	const paymentHandler = (payment) => {
+		if (typeof payment === 'string') {
+			if (payment === 'cash') paymentHandle.push('Cash');
+			else paymentHandle.push(payment.toUpperCase());
+		} else {
+			payment.forEach((element) => {
+				if (element === 'cash') paymentHandle.push('Cash');
+				else paymentHandle.push(element.toUpperCase());
+			});
+		}
+		console.log(paymentHandle);
+	};
+
+	paymentHandler(req.query.payment_type);
 	let risk = '';
 	if (req.query.time_horizon === 'short') {
 		risk = shortRisk;
@@ -77,6 +81,7 @@ library.get('/portfolio/simulate', (req, res) => {
 		{
 			riskRating: { $in: risk },
 			assetClass: { $regex: asset[0], $options: 'i' },
+			paymentType: { $in: paymentHandle },
 		},
 		(err, foundFunds) => {
 			if (err) {
@@ -99,6 +104,7 @@ library.get('/portfolio/simulate', (req, res) => {
 					{
 						riskRating: { $in: risk },
 						assetClass: { $regex: asset[1], $options: 'i' },
+						paymentType: { $in: paymentHandle },
 					},
 					(err, foundFunds) => {
 						if (err) {
