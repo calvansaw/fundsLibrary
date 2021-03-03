@@ -20,11 +20,11 @@
 	background-color: rgb(5, 214, 68);
 }
 .head {
-	height: 80px;
+	height: 90px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-content: center;
 }
 .head-button {
@@ -34,18 +34,25 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+.foot-button {
+	width: 200px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
 .main {
 	box-sizing: border-box;
 }
 .main > ul {
 	list-style-type: none;
-	column-count: 3;
-	column-gap: 5px;
+	/* column-count: 3;
+	column-gap: 5px; */
 }
-.main > ul > li {
+/* .main > ul > li {
 	width: 200px;
 	display: block;
-}
+} */
 .main > div > ul {
 	list-style-type: none;
 }
