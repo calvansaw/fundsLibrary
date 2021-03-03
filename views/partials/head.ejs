@@ -15,37 +15,38 @@
 </head>
 
 <body>
-	<div class="header">
-		<h1>Fund Library</h1>
-	</div>
 	<div class="header-nav">
+		<div class="header">
+			<img class="logo" src="https://www.kindpng.com/picc/m/437-4377224_clip-art-investment-company-logos-investment-logo-png.png" alt="logo">
+		</div>
+		
 		<ul>
 			<li>
-				<a href="/library">Back to Library</a>
+				<a class="btn btn-outline-primary btn-sm" href="/library">Back to Library</a>
 			</li>
-			<li><a href="/users/new">Create New User</a></li>
+			<li><a class="btn btn-outline-primary btn-sm" href="/users/new">Create New User</a></li>
 			
 			<%if(currentUser) {%>
 				<li>
 					<form action="/sessions?_method=DELETE" method="POST">
-						<input type="submit" value="Sign Out" />
+						<input class="btn btn-danger btn-sm" type="submit" value="Sign Out" />
 					</form>
 				</li>
 				<li>
-					<h3><%=currentUser.username%></h3>
+					<h4><%=currentUser.username%></h4>
 				</li>		
 			<%} else {%>
 				<li>
-					<button><a href="/sessions">Sign In</a></button>
+					<a class="btn btn-primary btn-sm" href="/sessions">Sign In</a>
 				</li>
 			<%};%>
 		</ul>
 	</div>
 	<div class="header-search">
 		<form action="/library/search" method="GET">
-			<label for="search">Search</label>
+			<label for="search"></label>
 			<input type="text" name="name" id="search">
-			<input type="submit" value="Search">
+			<input class="btn btn-outline-dark" type="submit" value="Search">
 		</form>
 	</div>
 </body>

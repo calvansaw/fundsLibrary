@@ -17,34 +17,97 @@
                     </div>
 				<%};%>
                 
-				<ul>
-                    <li><%=fund.name%></li>
-                    <li><%=fund.riskRating%></li>
-                    <li><%=fund.fundSize%></li>
-                    <li><%=fund.fundSizeFx%></li>
-                    <li><%=fund.managementFee%></li>
-                    <li><%=fund.dividendDistFreq%></li>
-                    <li><%=fund.inceptionDate%></li>
-                    <li><%=fund.performanceYtd%></li>
-                    <li><%=fund.performance1Yr%></li>
-                    <li><%=fund.performance3Yr%></li>
-                    <li><%=fund.performance5Yr%></li>
-                    <li><%=fund.nav%></li>
-                    <li><%=fund.navFx%></li>
-                    <li><%=fund.product%></li>
-                    <li><%=fund.assetManager%></li>
-                    <li><%=fund.assetClass%></li>
-                    <li><%=fund.subAssetClass%></li>
-                    <li><%=fund.sharpeRatio1Yr%></li>
-                    <li><%=fund.sharpeRatio3Yr%></li>
-                    <li><%=fund.sharpeRatio5Yr%></li>
-                    <li><%=fund.volatility1Yr%></li>
-                    <li><%=fund.volatility3Yr%></li>
-                    <li><%=fund.volatility5Yr%></li>
-                    <%fund.paymentType.forEach(payType => {%>
-                        <li><%=payType%></li>
-                    <%});%>
-                </ul>
+				<div class="main">
+                    <ul>
+                        <li><h4><%=fund.name%></h4></li>
+                        <li>
+                            <div class="title">Risk Rating</div>
+                            <div><%=fund.riskRating%></div>
+                        </li>
+                        <li>
+                            <div class="title">Fund Size</div>
+                            <div><%=fund.fundSizeFx%> <%=fund.fundSize%>M</div>
+                        </li>
+                        <li>
+                            <div class="title">Annual Management Fee</div>
+                            <div><%=fund.managementFee%>%</div>
+                        </li>
+                        <li>
+                            <div class="title">Dividend Distribution Frequency</div>
+                            <div><%=fund.dividendDistFreq%></div>
+                        </li>
+                        <li>
+                            <div class="title">Inception Date</div>
+                            <div><%=fund.inceptionDate%></div>
+                        </li>
+                        <li>
+                            <div class="title">Performance (Cumulative YTD)</div>
+                            <div><%=fund.performanceYtd%>%</div>
+                        </li>
+                        <li>
+                            <div class="title">Performance (Cumulative 1 Yr)</div>
+                            <div><%=fund.performance1Yr%>%</div>
+                        </li>
+                        <li>
+                            <div class="title">Performance (Annualised 3 Yr)</div>
+                            <div><%=fund.performance3Yr%>%</div>
+                        </li>
+                        <li>
+                            <div class="title">Performance (Annualised 5 Yr)</div>
+                            <div><%=fund.performance5Yr%>%</div>
+                        </li>
+                        <li>
+                            <div class="title">NAV</div>
+                            <div><%=fund.navFx%> <%=fund.nav%></div>
+                        </li>
+                        <li>
+                            <div class="title">Product</div>
+                            <div><%=fund.product%></div>      
+                        </li>
+                        <li>
+                            <div class="title">Asset Manager</div>
+                            <div><%=fund.assetManager%></div>
+                        </li>
+                        <li>
+                            <div class="title">Asset Class</div>
+                            <div><%=fund.assetClass%></div>
+                        </li>
+                        <li>
+                            <div class="title">Sub Asset Class</div>
+                            <div><%=fund.subAssetClass%></div>
+                        </li>
+                        <li>
+                            <div class="title">Sharpe Ratio (Annualised 1 Yr)</div>
+                            <div><%=fund.sharpeRatio1Yr%></div>
+                        </li>
+                        <li>
+                            <div class="title">Sharpe Ratio (Annualised 3 Yr)</div>
+                            <div><%=fund.sharpeRatio3Yr%></div>
+                        </li>
+                        <li>
+                            <div class="title">Sharpe Ratio (Annualised 5 Yr)</div>
+                            <div><%=fund.sharpeRatio5Yr%></div>
+                        </li>
+                        <li>
+                            <div class="title">Volatility (Annualised 1 Yr)</div>
+                            <div><%=fund.volatility1Yr%></div>
+                        </li>
+                        <li>
+                            <div class="title">Volatility (Annualised 3 Yr)</div>
+                            <div><%=fund.volatility3Yr%></div>
+                        </li>
+                        <li>
+                            <div class="title">Volatility (Annualised 5 Yr)</div>
+                            <div><%=fund.volatility5Yr%></div>
+                        </li>
+                        <li>
+                            <div class="title">Payment Type</div>
+                            <%fund.paymentType.forEach(payType => {%>
+                                <div><%=payType%></div>
+                            <%});%>
+                        </li>
+                    </ul>
+                </div>
 			</div>
 		</div>
 	</body>
