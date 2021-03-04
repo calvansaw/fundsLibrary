@@ -10,96 +10,112 @@
 
                 <%funds.forEach(fund => {%>
 
-                    <ul class="card text-white bg-success mb-3" style="max-width: 50rem;">
+                    <ul class="card text-white bg-success mb-3" style="max-width: 80rem;">
+                        <div class="row">
+                            <div class="col-sm">
 
-                        <li><h4><a class="btn btn-outline-dark btn-lg" href="/library/<%=fund._id%>"><%=fund.name%></a></h4></li>
-                        
-                        <li class="card-body">
-                            <h5 class="card-title">Risk Rating</h5>
-                            <div><%=fund.riskRating%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Fund Size</h5>
-                            <div><%=fund.fundSizeFx%> <%=fund.fundSize%>M</div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Annual Management Fee</h5>
-                            <div><%=fund.managementFee%>%</div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Dividend Distribution Frequency</h5>
-                            <div><%=fund.dividendDistFreq%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Inception Date</h5>
-                            <div><%=fund.inceptionDate%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Performance (Cumulative YTD)</h5>
-                            <div><%=fund.performanceYtd%>%</div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Performance (Cumulative 1 Yr)</h5>
-                            <div><%=fund.performance1Yr%>%</div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Performance (Annualised 3 Yr)</h5>
-                            <div><%=fund.performance3Yr%>%</div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Performance (Annualised 5 Yr)</h5>
-                            <div><%=fund.performance5Yr%>%</div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">NAV</h5>
-                            <div><%=fund.navFx%> <%=fund.nav%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Product</h5>
-                            <div><%=fund.product%></div>      
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Asset Manager</h5>
-                            <div><%=fund.assetManager%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Asset Class</h5>
-                            <div><%=fund.assetClass%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Sub Asset Class</h5>
-                            <div><%=fund.subAssetClass%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Sharpe Ratio (Annualised 1 Yr)</h5>
-                            <div><%=fund.sharpeRatio1Yr%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Sharpe Ratio (Annualised 3 Yr)</h5>
-                            <div><%=fund.sharpeRatio3Yr%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Sharpe Ratio (Annualised 5 Yr)</h5>
-                            <div><%=fund.sharpeRatio5Yr%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Volatility (Annualised 1 Yr)</h5>
-                            <div><%=fund.volatility1Yr%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Volatility (Annualised 3 Yr)</h5>
-                            <div><%=fund.volatility3Yr%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Volatility (Annualised 5 Yr)</h5>
-                            <div><%=fund.volatility5Yr%></div>
-                        </li>
-                        <li class="card-body">
-                            <h5 class="card-title">Payment Type</h5>
-                            <%fund.paymentType.forEach(payType => {%>
-                                <div><%=payType%></div>
-                            <%});%>
-                        </li>
+                                <li><h4><a class="btn btn-outline-dark btn-lg" href="/library/<%=fund._id%>"><%=fund.name%></a></h4></li>
+                                
+                                <li class="card-body">
+                                    <h5 class="card-title">Risk Rating</h5>
+                                    <div><%=fund.riskRating%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Fund Size</h5>
+                                    <div><%=fund.fundSizeFx%> <%=fund.fundSize%>M</div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Annual Management Fee</h5>
+                                    <div><%=fund.managementFee%>%</div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Dividend Distribution Frequency</h5>
+                                    <div><%=fund.dividendDistFreq%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Inception Date</h5>
+                                    <div><%=fund.inceptionDate%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">NAV</h5>
+                                    <div><%=fund.navFx%> <%=fund.nav%></div>
+                                </li>
+
+                            </div>
+
+                            <div class="col-sm">
+
+                                <li class="card-body">
+                                    <h5 class="card-title">Performance (Cumulative YTD)</h5>
+                                    <div><%=fund.performanceYtd%>%</div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Performance (Cumulative 1 Yr)</h5>
+                                    <div><%=fund.performance1Yr%>%</div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Performance (Annualised 3 Yr)</h5>
+                                    <div><%=fund.performance3Yr%>%</div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Performance (Annualised 5 Yr)</h5>
+                                    <div><%=fund.performance5Yr%>%</div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Sharpe Ratio (Annualised 1 Yr)</h5>
+                                    <div><%=fund.sharpeRatio1Yr%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Sharpe Ratio (Annualised 3 Yr)</h5>
+                                    <div><%=fund.sharpeRatio3Yr%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Sharpe Ratio (Annualised 5 Yr)</h5>
+                                    <div><%=fund.sharpeRatio5Yr%></div>
+                                </li>
+
+                            </div>
+
+                            <div class="col-sm">
+ 
+                                <li class="card-body">
+                                    <h5 class="card-title">Product</h5>
+                                    <div><%=fund.product%></div>      
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Asset Manager</h5>
+                                    <div><%=fund.assetManager%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Asset Class</h5>
+                                    <div><%=fund.assetClass%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Sub Asset Class</h5>
+                                    <div><%=fund.subAssetClass%></div>
+                                </li>
+                                
+                                <li class="card-body">
+                                    <h5 class="card-title">Volatility (Annualised 1 Yr)</h5>
+                                    <div><%=fund.volatility1Yr%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Volatility (Annualised 3 Yr)</h5>
+                                    <div><%=fund.volatility3Yr%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Volatility (Annualised 5 Yr)</h5>
+                                    <div><%=fund.volatility5Yr%></div>
+                                </li>
+                                <li class="card-body">
+                                    <h5 class="card-title">Payment Type</h5>
+                                    <%fund.paymentType.forEach(payType => {%>
+                                        <div><%=payType%></div>
+                                    <%});%>
+                                </li>
+
+                            </div>
+                        </div>
                     </ul>
                 <%});%>
 			</div>
