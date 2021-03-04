@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const session = require('express-session');
 const mongoURI = process.env.DB_URI || 'mongodb://localhost:27017/fund';
 

@@ -1,7 +1,8 @@
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const express = require('express');
 const library = express.Router();
 const Funds = require('../models/funds');
+const moment = require('moment');
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -30,6 +31,7 @@ library.get('/search', (req, res) => {
 			res.render('library/search.ejs', {
 				funds: searchedFunds,
 				currentUser: req.session.currentUser,
+				moment: moment,
 			});
 		}
 	);
@@ -125,6 +127,7 @@ library.get('/portfolio/simulate', (req, res) => {
 							res.render('library/simulate.ejs', {
 								funds: portfolio,
 								currentUser: req.session.currentUser,
+								moment: moment,
 							});
 							// res.send(portfolio);
 						}
@@ -153,6 +156,7 @@ library.get('/:id', (req, res) => {
 		res.render('library/show.ejs', {
 			fund: foundFund,
 			currentUser: req.session.currentUser,
+			moment: moment,
 		});
 	});
 });
