@@ -55,4 +55,8 @@
 } */
 .main > div > ul {
 	list-style-type: none;
+	margin: 0 auto;
+}
+.questions {
+	margin: 0 1em 0 1em;
 }

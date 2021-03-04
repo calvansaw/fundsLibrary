@@ -11,46 +11,46 @@
             <div class="questions">
                 <form action="/library/portfolio/simulate" method="GET">
 
-                    <div class="one">
+                    <div class="row mb-3">
 
-                        <label for="#">Risk Appetite?</label>
+                        <label for="#" class="col-sm-2 col-form-label">Risk Appetite?</label>
                         <input type="radio" class="btn-check" name="risk_appetite" id="conservative-outlined" autocomplete="off" value="conservative" checked>
-                        <label class="btn btn-outline-success" for="conservative-outlined">Conservative</label>
+                        <label class="btn btn-outline-success col-sm-2 col-form-label" for="conservative-outlined">Conservative</label>
                         
                         <input type="radio" class="btn-check" name="risk_appetite" id="aggressive-outlined" autocomplete="off" value="aggressive">
-                        <label class="btn btn-outline-danger" for="aggressive-outlined">Aggressive</label>
+                        <label class="btn btn-outline-danger col-sm-2 col-form-label" for="aggressive-outlined">Aggressive</label>
                         
                     </div>
 
-                    <div class="two">
+                    <div class="row mb-3">
 
-                        <label for="">Payment Type?</label>
+                        <label for="#" class="col-sm-2 col-form-label">Payment Type?</label>
                         <input type="checkbox" class="btn-check" name="payment_type" id="btn-check-cash-outlined" autocomplete="off" value="cash" checked>
-                        <label class="btn btn-outline-secondary" for="btn-check-cash-outlined">Cash</label>
+                        <label class="btn btn-outline-secondary col-sm-2 col-form-label" for="btn-check-cash-outlined">Cash</label>
                         
                         <input type="checkbox" class="btn-check" name="payment_type" id="btn-check-cpf-oa-outlined" autocomplete="off" value="cpf-oa">
-                        <label class="btn btn-outline-secondary" for="btn-check-cpf-oa-outlined">CPF-OA</label>
+                        <label class="btn btn-outline-secondary col-sm-2 col-form-label" for="btn-check-cpf-oa-outlined">CPF-OA</label>
                         
                         <input type="checkbox" class="btn-check" name="payment_type" id="btn-check-cpf-sa-outlined" autocomplete="off" value="cpf-sa">
-                        <label class="btn btn-outline-secondary" for="btn-check-cpf-sa-outlined">CPF-SA</label>
+                        <label class="btn btn-outline-secondary col-sm-2 col-form-label" for="btn-check-cpf-sa-outlined">CPF-SA</label>
                         
                         <input type="checkbox" class="btn-check" name="payment_type" id="btn-check-srs-outlined" autocomplete="off" value="srs">
-                        <label class="btn btn-outline-secondary" for="btn-check-srs-outlined">SRS</label> 
+                        <label class="btn btn-outline-secondary col-sm-2 col-form-label" for="btn-check-srs-outlined">SRS</label> 
 
                     </div>
 
-                    <div class="three">
+                    <div class="row mb-3">
 
-                        <label for="#">Time Horizon?</label>
+                        <label for="#" class="col-sm-2 col-form-label">Time Horizon?</label>
                         <input type="radio" class="btn-check" name="time_horizon" id="long-outlined" autocomplete="off" value="long" checked>
-                        <label class="btn btn-outline-success" for="long-outlined">Long</label>
+                        <label class="btn btn-outline-success col-sm-2 col-form-label" for="long-outlined">Long</label>
                         
                         <input type="radio" class="btn-check" name="time_horizon" id="short-outlined" autocomplete="off" value="short">
-                        <label class="btn btn-outline-danger" for="short-outlined">Short</label>
+                        <label class="btn btn-outline-danger col-sm-2 col-form-label" for="short-outlined">Short</label>
                         
                     </div>
 
-                    <input type="submit" value="test">
+                    <input type="submit" class="btn btn-primary" value="Simulate">
                 </form>
                     
 

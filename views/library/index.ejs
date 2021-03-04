@@ -28,7 +28,7 @@
 		<div class="main">   
 			<ul>
                 <%allFunds.forEach(fund => {%>
-                    <li class="row"><a class="btn btn-outline-success btn-sm" href="/library/<%=fund._id%>"><%=fund.name%></a></li>
+                    <li class="card" style="max-width: 80rem;"><a class="btn btn-outline-success btn-sm" href="/library/<%=fund._id%>"><%=fund.name%></a></li>
                 <%});%>
             </ul>
 		</div>
