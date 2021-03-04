@@ -7,55 +7,127 @@
 		<div class="main">
 			<div>
 				<h1>Create Fund</h1>
-				<form action="/library" method="POST">
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name" />
-					<label for="riskRating">Risk Rating</label>
-					<input type="text" name="riskRating" id="riskRating" />
-                    <label for="fundSize">Fund Size</label>
-                    <input type="number" name="fundSize" id="fundSize" step="any">
-                    <label for="fundSizeFx">Fund Size Currency</label>
-                    <input type="text" name="fundSizeFx" id="fundSizeFx">
-                    <label for="managementFee">Management Fee</label>
-                    <input type="number" name="managementFee" id="managementFee" step="any">
-                    <label for="dividendDistFreq">Dividend Distribution Frequency</label>
-                    <input type="text" name="dividendDistFreq" id="dividendDistFreq">
-                    <label for="inceptionDate">Inception Date</label>
-                    <input type="date" name="inceptionDate" id="inceptionDate">
-                    <label for="performanceYtd">Performance Cumulative YTD</label>
-                    <input type="number" name="performanceYtd" id="performanceYtd" step="any">
-                    <label for="performance1Yr">Performance 1 Year</label>
-                    <input type="number" name="performance1Yr" id="performance1Yr" step="any">
-                    <label for="performance3Yr">Performance 3 Year</label>
-                    <input type="number" name="performance3Yr" id="performance3Yr" step="any">
-                    <label for="performance5Yr">Performance 5 Year</label>
-                    <input type="number" name="performance5Yr" id="performance5Yr" step="any">
-                    <label for="nav">NAV</label>
-                    <input type="number" name="nav" id="nav" step="any">
-                    <label for="navFx">NAV Currency</label>
-                    <input type="text" name="navFx" id="navFx">
-                    <label for="product">Product Type</label>
-                    <input type="text" name="product" id="product">
-                    <label for="assetManager">Asset Manager</label>
-                    <input type="text" name="assetManager" id="assetManager">
-                    <label for="assetClass">Asset Class</label>
-                    <input type="text" name="assetClass" id="assetClass">
-                    <label for="subAssetClass">Sub Asset Class</label>
-                    <input type="text" name="subAssetClass" id="subAssetClass">
-                    <label for="sharpeRatio1Yr">Sharpe Ratio 1 Year</label>
-                    <input type="number" name="sharpeRatio1Yr" id="sharpeRatio1Yr" step="any">
-                    <label for="sharpeRatio3Yr">Sharpe Ratio 3 Year</label>
-                    <input type="number" name="sharpeRatio3Yr" id="sharpeRatio3Yr" step="any">
-                    <label for="sharpeRatio5Yr">Sharpe Ratio 5 Year</label>
-                    <input type="number" name="sharpeRatio5Yr" id="sharpeRatio5Yr" step="any">
-                    <label for="volatility1Yr">Volatility 1 Year</label>
-                    <input type="number" name="volatility1Yr" id="volatility1Yr" step="any">
-                    <label for="volatility3Yr">Volatility 3 Year</label>
-                    <input type="number" name="volatility3Yr" id="volatility3Yr" step="any">
-                    <label for="volatility5Yr">Volatility 5 Year</label>
-                    <input type="number" name="volatility5Yr" id="volatility5Yr" step="any">
-                    <label for="paymentType">Payment Type</label>
-                    <input type="text" name="paymentType" id="paymentType">
+				<form class="row" action="/library" method="POST">
+					<div class="mb-3 col-md-6">
+
+                        <label class="form-label" for="name">Name</label>
+                        <input class="form-control" type="text" name="name" id="name" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="riskRating">Risk Rating</label>
+                        <input class="form-control" type="text" name="riskRating" id="riskRating" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="fundSize">Fund Size</label>
+                        <input class="form-control" type="number" name="fundSize" id="fundSize" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="fundSizeFx">Fund Size Currency</label>
+                        <input class="form-control" type="text" name="fundSizeFx" id="fundSizeFx" />
+                    </div>
+                    <div class="mb-3 col-md-3">
+
+                        <label class="form-label" for="managementFee">Management Fee</label>
+                        <input class="form-control" type="number" name="managementFee" id="managementFee" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-5">
+
+                        <label class="form-label" for="dividendDistFreq">Dividend Distribution Frequency</label>
+                        <input class="form-control" type="text" name="dividendDistFreq" id="dividendDistFreq" />
+                    </div>
+                    <div class="mb-3 col-md-4">
+
+                        <label class="form-label" for="inceptionDate">Inception Date</label>
+                        <input class="form-control" type="date" name="inceptionDate" id="inceptionDate" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="performanceYtd">Performance Cumulative YTD</label>
+                        <input class="form-control" type="number" name="performanceYtd" id="performanceYtd" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="performance1Yr">Performance 1 Year</label>
+                        <input class="form-control" type="number" name="performance1Yr" id="performance1Yr" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="performance3Yr">Performance 3 Year</label>
+                        <input class="form-control" type="number" name="performance3Yr" id="performance3Yr" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="performance5Yr">Performance 5 Year</label>
+                        <input class="form-control" type="number" name="performance5Yr" id="performance5Yr" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="nav">NAV</label>
+                        <input class="form-control" type="number" name="nav" id="nav" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="navFx">NAV Currency</label>
+                        <input class="form-control" type="text" name="navFx" id="navFx" />
+                    </div>
+                    <div class="mb-3 col-md-3">
+
+                        <label class="form-label" for="product">Product Type</label>
+                        <input class="form-control" type="text" name="product" id="product" />
+                    </div>
+                    <div class="mb-3 col-md-3">
+
+                        <label class="form-label" for="assetManager">Asset Manager</label>
+                        <input class="form-control" type="text" name="assetManager" id="assetManager" />
+                    </div>
+                    <div class="mb-3 col-md-3">
+
+                        <label class="form-label" for="assetClass">Asset Class</label>
+                        <input class="form-control" type="text" name="assetClass" id="assetClass" />
+                    </div>
+                    <div class="mb-3 col-md-3">
+
+                        <label class="form-label" for="subAssetClass">Sub Asset Class</label>
+                        <input class="form-control" type="text" name="subAssetClass" id="subAssetClass" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="sharpeRatio1Yr">Sharpe Ratio 1 Year</label>
+                        <input class="form-control" type="number" name="sharpeRatio1Yr" id="sharpeRatio1Yr" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="sharpeRatio3Yr">Sharpe Ratio 3 Year</label>
+                        <input class="form-control" type="number" name="sharpeRatio3Yr" id="sharpeRatio3Yr" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="sharpeRatio5Yr">Sharpe Ratio 5 Year</label>
+                        <input class="form-control" type="number" name="sharpeRatio5Yr" id="sharpeRatio5Yr" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="volatility1Yr">Volatility 1 Year</label>
+                        <input class="form-control" type="number" name="volatility1Yr" id="volatility1Yr" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="volatility3Yr">Volatility 3 Year</label>
+                        <input class="form-control" type="number" name="volatility3Yr" id="volatility3Yr" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-2">
+
+                        <label class="form-label" for="volatility5Yr">Volatility 5 Year</label>
+                        <input class="form-control" type="number" name="volatility5Yr" id="volatility5Yr" step="any" />
+                    </div>
+                    <div class="mb-3 col-md-3">
+
+                        <label class="form-label" for="paymentType">Payment Type</label>
+                        <input class="form-control" type="text" name="paymentType" id="paymentType" />
+                    </div>
 
 					<input type="submit" value="Create" />
 				</form>
